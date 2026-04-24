@@ -1,0 +1,31 @@
+{
+  "name": "3ul0gy",
+  "version": "0.1.0",
+  "description": "Safe-by-default CLI for dead code and unused dependency detection",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "3ul0gy": "dist/cli/main.js"
+  },
+  "scripts": {
+    "dev": "npx tsx src/cli/main.ts",
+    "build": "bun build src/cli/main.ts --outdir dist/cli --target bun",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src",
+    "lint:fix": "biome check --write src",
+    "check": "npm run typecheck && npm run lint && npm run test"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.2.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
